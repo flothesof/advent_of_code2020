@@ -1,0 +1,19 @@
+{
+    "name": "advent_of_code2020",
+    "version": "1.0.0",
+    "description": "Advent of code 2020 solutions.",
+    "main": "index.js",
+    "dependencies": {
+        "fs": "^0.0.1-security",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.1.2"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.10"
+    },
+    "scripts": {
+        "a01": "ts-node src/a01.ts"
+    },
+    "author": "@flothesof",
+    "license": "ISC"
+}
