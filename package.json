@@ -12,7 +12,8 @@
         "@types/node": "^14.14.10"
     },
     "scripts": {
-        "a01": "ts-node src/a01.ts"
+        "a01": "ts-node src/a01.ts",
+        "a02": "ts-node src/a02.ts"
     },
     "author": "@flothesof",
     "license": "ISC"

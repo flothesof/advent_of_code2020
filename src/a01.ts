@@ -6,7 +6,7 @@ var set = new Set();
 for (let n of data.split("\n").map((str) => parseInt(str))) {
   if (set.has(2020 - n)) {
     // found the right number for part 1
-    console.log(n * (2020 - n));
+    console.log("part 1:", n * (2020 - n));
     break;
   } else {
     set.add(n);
@@ -27,7 +27,7 @@ var set = new Set();
 for (let n of data.split("\n").map((str) => parseInt(str))) {
   if (2020 - n in sumof2) {
     // found the right number for part 2
-    console.log(n * sumof2[2020 - n]);
+    console.log("part 2:", n * sumof2[2020 - n]);
     break;
   } else {
     set.add(n);
