@@ -13,7 +13,8 @@
     },
     "scripts": {
         "a01": "ts-node src/a01.ts",
-        "a02": "ts-node src/a02.ts"
+        "a02": "ts-node src/a02.ts",
+        "a04": "ts-node src/a04.ts"
     },
     "author": "@flothesof",
     "license": "ISC"

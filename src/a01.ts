@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-var data = readFileSync("src/input01.txt", "utf8");
+var data = readFileSync("input/input01.txt", "utf8");
 
 // part1
 var set = new Set();

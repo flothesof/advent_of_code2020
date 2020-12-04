@@ -1,5 +1,5 @@
 trees = set()
-for r, line in enumerate(open('input03.txt').readlines()):
+for r, line in enumerate(open('../input/input03.txt').readlines()):
     line = line.strip()
     for c, symbol in enumerate(line):
         if symbol == '#':
@@ -30,7 +30,5 @@ def prod(array):
 
 
 slopes = [(1, 1), (1, 3), (1, 5), (1, 7), (2, 1)]
-print(f"part 2: {prod([count_trees(slope, trees, r, width) for slope in slopes])}")
-
-###############################################################################
-
+print(
+    f"part 2: {prod([count_trees(slope, trees, r, width) for slope in slopes])}")

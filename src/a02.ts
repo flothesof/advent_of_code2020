@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 
-var input: String[] = readFileSync("src/input02.txt", "utf-8")
+var input: String[] = readFileSync("input/input02.txt", "utf-8")
   .trim()
   .split("\n");
 
