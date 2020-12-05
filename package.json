@@ -14,6 +14,7 @@
     "scripts": {
         "a01": "ts-node src/a01.ts",
         "a02": "ts-node src/a02.ts",
+        "a03": "ts-node src/a03.ts",
         "a04": "ts-node src/a04.ts",
         "a05": "ts-node src/a05.ts"
     },

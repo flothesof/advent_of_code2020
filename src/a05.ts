@@ -41,6 +41,7 @@ console.log("part2:", seatIds[seatLocation] + 1);
 
 // things I've learnt
 // - first time writing the array.forEach((val)=>{dosomething(val);})
-// - using array.sort()
+// - using array.sort() --> WOOOOPS I was lucky this time since sort operates on strings, not numbers!!!!
+//    I should either use a new Int16Array or give a comparison function myself sort((a, b)=> a-b)
 // - using Math.max()
 // - figuring out how to do Math.max(...array), equivalent to Python f(*array)
