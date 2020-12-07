@@ -10,7 +10,7 @@ function parseColors(items: string) {
     return firstSplit.map((item) => {
       var numberOfBags = parseInt(item.match(/\d+\s*/)[0]);
       var typeOfBag = item.split(/\d+\s*/)[1].split(/\s*bag/)[0];
-      return typeOfBag;
+      return [typeOfBag, numberOfBags];
     });
   }
 }
@@ -26,9 +26,9 @@ function canHold(whatBag: string, whichContent: string) {
     return false;
   } else {
     for (let child of tree[whatBag]) {
-      if (child == whichContent) {
+      if (child[0] == whichContent) {
         return true;
-      } else if (canHold(child, whichContent)) {
+      } else if (canHold(child[0], whichContent)) {
         return true;
       }
     }
@@ -43,3 +43,17 @@ for (let key in tree) {
   }
 }
 console.log("part 1:", canContain);
+
+function countBags(whatBag: string) {
+  if (tree[whatBag].length == 0) {
+    return 1;
+  } else {
+    var count = 1;
+    for (let child of tree[whatBag]) {
+      count += child[1] * countBags(child[0]);
+    }
+    return count;
+  }
+}
+
+console.log("part 2:", countBags("shiny gold") - 1);
