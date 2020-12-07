@@ -57,3 +57,10 @@ function countBags(whatBag: string) {
 }
 
 console.log("part 2:", countBags("shiny gold") - 1);
+
+// what I learnt today
+// - string.slice(0, -3) works just like Python's string operator
+// - regexp parsing is not as easy as I thought
+// - don't forget to put a return instruction in the forEach mapping!
+// - it's quick to write regexp with /regexp/ as item.match(/\d+\s*/)
+// - Objects work nicely as tree structures
