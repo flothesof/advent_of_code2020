@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 
-var chargers = readFileSync("input/input10_test1.txt", "utf-8")
+var chargers = readFileSync("input/input10.txt", "utf-8")
   .trim()
   .split("\n")
   .map((str) => parseInt(str));
@@ -21,12 +21,7 @@ console.log("part 1:", diffs[1] * diffs[3]);
 
 // part 2
 
-const [start, finish] = [0, highestRated];
-
-var chains = [[0]];
-var availableSet = new Set(chargers);
-
-function generatePossible(chains: number[][]) {
+function generatePossibleChainsExplicitly(chains: number[][]) {
   for (let chain of chains) {
     var last = chain[chain.length - 1];
     if (last == highestRated) {
@@ -34,10 +29,10 @@ function generatePossible(chains: number[][]) {
     } else {
       var newChains = [];
       for (let nextVal of [last + 1, last + 2, last + 3]) {
-        if (availableSet.has(nextVal)) {
+        if (availableNodes.has(nextVal)) {
           var newChain = [...chain];
           newChain.push(nextVal);
-          var newLocalChains = generatePossible([newChain]);
+          var newLocalChains = generatePossibleChainsExplicitly([newChain]);
           for (let otherChain of newLocalChains) {
             newChains.push(otherChain);
           }
@@ -48,23 +43,28 @@ function generatePossible(chains: number[][]) {
   }
 }
 
-function generatePossible2(chains: number[][]) {
-  // each chain is a tuple: (lastValue, number of chains so far)
-  for (let chain of chains) {
-    var last = chain[0];
-    if (last == highestRated) {
-      return chains;
-    } else {
-      var newChains = [];
-      for (let nextVal of [last + 1, last + 2, last + 3]) {
-        if (availableSet.has(nextVal)) {
-          newChains.push([nextVal, chain[1]]);
-        }
+// this does not work on the large input file
+// var chains = [[0]];
+// var availableSet = new Set(chargers);
+// generatePossibleChainsExplicitly(chains)
+
+function depthFirstSearch(availableNodes, discovered, currentNode) {
+  if (currentNode == highestRated) {
+    discovered[currentNode] = 1;
+    return;
+  }
+  for (let n of [currentNode + 1, currentNode + 2, currentNode + 3]) {
+    if (availableNodes.has(n)) {
+      if (n in discovered) {
+        discovered[currentNode] += discovered[n];
+      } else {
+        depthFirstSearch(availableNodes, discovered, n);
+        discovered[currentNode] = discovered[n];
       }
-      return generatePossible2(newChains);
     }
   }
 }
-var chains2 = [[0, 1]];
-var result = generatePossible2(chains2);
-console.log(result.length, result);
+var availableNodes = new Set(chargers);
+var discovered = {};
+depthFirstSearch(availableNodes, discovered, 0);
+console.log("part 2:", discovered[0]);
