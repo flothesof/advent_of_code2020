@@ -68,3 +68,7 @@ var availableNodes = new Set(chargers);
 var discovered = {};
 depthFirstSearch(availableNodes, discovered, 0);
 console.log("part 2:", discovered[0]);
+
+// what I've learned
+// - what a depth first search algorithm is
+// - and that it is quite easy to implement it recursively (I should ankify that algorithm)

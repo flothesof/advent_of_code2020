@@ -140,3 +140,6 @@ while (true) {
   }
 }
 console.log("part 2:", sumSeats(seats));
+
+// what I've learnt today
+// - precedence rules if (coord[0] > R || coord[0] < 0 || coord[1] > C || coord[1] < 0)
