@@ -132,4 +132,4 @@ console.log("Part 2:", sum);
 // things I've learnt today
 // - Math.pow does powers
 // - Math.floor does floor (used in binary decomposition)
-// - summing
+// - summing over map.values() does not do exactly what I thought
