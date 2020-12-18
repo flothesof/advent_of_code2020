@@ -27,7 +27,6 @@ function getNeighbors3D(x, y, z) {
   }
   return neighbors;
 }
-console.log(getNeighbors(0, 0, 0));
 
 function getNeighbors3D_opti(x, y, z) {
   return [
