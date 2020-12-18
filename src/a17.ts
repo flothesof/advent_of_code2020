@@ -27,6 +27,7 @@ function getNeighbors(x, y, z) {
   }
   return neighbors;
 }
+console.log(getNeighbors(0, 0, 0));
 
 function countNeighbors(x, y, z, grid) {
   var count = 0;
