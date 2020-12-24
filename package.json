@@ -32,6 +32,7 @@
         "a18": "ts-node src/a18.ts",
         "a19": "ts-node src/a19.ts",
         "a20": "ts-node src/a20.ts",
+        "a21": "ts-node src/a21.ts",
         "a22": "ts-node src/a22.ts",
         "a23": "ts-node src/a23.ts",
         "a24": "ts-node src/a24.ts"
