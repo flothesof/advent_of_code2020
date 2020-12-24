@@ -33,7 +33,8 @@
         "a19": "ts-node src/a19.ts",
         "a20": "ts-node src/a20.ts",
         "a22": "ts-node src/a22.ts",
-        "a23": "ts-node src/a23.ts"
+        "a23": "ts-node src/a23.ts",
+        "a24": "ts-node src/a24.ts"
     },
     "author": "@flothesof",
     "license": "ISC"
