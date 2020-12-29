@@ -1,5 +1,4 @@
 import { readFileSync } from "fs";
-import { finished } from "stream";
 
 function makePairs(input) {
   var foods = readFileSync(input, "utf-8").trim().split("\n");
@@ -89,3 +88,6 @@ for (let key of [...allergen2ingredient.keys()].sort()) {
   ingredients.push(allergen2ingredient.get(key));
 }
 console.log("Part 2:", ingredients.join(","));
+
+// what I've learned today
+// - js has missing set operations, but a helpful resource about them is here: https://exploringjs.com/impatient-js/ch_sets.html#missing-set-operations

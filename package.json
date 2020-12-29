@@ -35,7 +35,8 @@
         "a21": "ts-node src/a21.ts",
         "a22": "ts-node src/a22.ts",
         "a23": "ts-node src/a23.ts",
-        "a24": "ts-node src/a24.ts"
+        "a24": "ts-node src/a24.ts",
+        "a25": "ts-node src/a25.ts"
     },
     "author": "@flothesof",
     "license": "ISC"
